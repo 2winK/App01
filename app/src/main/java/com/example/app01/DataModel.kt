@@ -1,8 +1,13 @@
 package com.example.app01
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "users")
 data class User(
-    val id: Int,
-    val name: String,
-    val username: String,
-    val email: String
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    @ColumnInfo(name = "name") val name: String,
+    @ColumnInfo(name = "username") val username: String,
+    @ColumnInfo(name = "email") val email: String
 )
